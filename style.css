@@ -1,0 +1,26 @@
+h1 {
+    color: brown;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+p {
+    color: rgb(167, 105, 18);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+body
+{
+    align-items: center;
+    margin: 20px;
+    background-color: rgb(250, 241, 224);
+}
+
+.mundo {
+    display: flex;
+}
+
+.mundo img{
+    width: 100px;
+}

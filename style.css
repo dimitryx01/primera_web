@@ -3,10 +3,19 @@
    ================================= */
 
 :root {
-  --color-principal: #3d89cd;
-  --color-secundario: #f39c12;
+  --color-principal: #ff9505;
+  --color-secundario: #ffb627;
   --color-fondo: #ffffff;
   --color-texto: #333;
+  --color-blanco: #fff;
+  --color-gris-claro: #f5f5f5;
+  --color-gris-medio: #eee;
+  --color-gris-oscuro: #e0e0e0;
+  --color-gris-muy-claro: #fafafa;
+  --color-borde:var(--color-principal);
+  --color-borde-claro: var(--color-principal);
+  --color-texto-claro: #666;
+  --color-activo: yellow;
   --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -14,8 +23,8 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #fff;
-  color: #333;
+  background: var(--color-blanco);
+  color: var(--color-texto);
 }
 
 /* ====== HEADER ====== */
@@ -27,8 +36,8 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 15px 20px;
-  background: #3d89cd;
-  color: white;
+  background: var(--color-principal);
+  color: var(--color-blanco);
 }
 
 header h1 {
@@ -45,13 +54,13 @@ header nav ul {
 
 header nav a {
   text-decoration: none;
-  color: white;
+  color: var(--color-blanco);
   font-weight: bold;
   transition: color 0.3s;
 }
 
 header nav a:hover {
-  color: yellow; /* Efecto simple al pasar el ratón */
+  color: var(--color-activo);
 }
 
 /* ====== HERO ====== */
@@ -59,13 +68,13 @@ header nav a:hover {
   width: 90%;
   height: 300px;
   margin: 20px auto;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-borde);
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 24px;
-  background: #eee;
+  background: var(--color-gris-medio);
   transition: transform 0.3s;
 }
 
@@ -78,12 +87,12 @@ header nav a:hover {
   margin: 20px auto;
   padding: 15px;
   max-width: 70%;
-  background: #f5f5f5;
-  border: 1px solid #ddd;
+  background: var(--color-gris-claro);
+  border: 1px solid var(--color-borde-claro);
 }
 
 .banner:hover {
-  background: #e0e0e0;
+  background: var(--color-gris-oscuro);
 }
 
 /* ====== TARJETAS ====== */
@@ -97,25 +106,163 @@ header nav a:hover {
 
 .tarjeta {
   flex: 1 1 250px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-borde);
   padding: 20px;
   border-radius: 8px;
   text-align: center;
-  background: white;
+  background: var(--color-blanco);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .tarjeta:hover {
-
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* ====== FOOTER ====== */
 footer {
   width: 100%;
-  background: #3d89cd;
-  color: white;
+  background: var(--color-principal);
+  color: var(--color-blanco);
   text-align: center;
   padding: 15px;
   margin-top: 40px;
+}
+
+
+/* ====== Extensiones para Contacto ====== */
+
+/* Enlace activo del header */
+header nav a.activo {
+  color: var(--color-activo);
+}
+
+/* Formulario */
+.tarjeta-form form {
+  display: block;
+  width: 100%;
+}
+
+.form-grupo {
+  margin-bottom: 14px;
+}
+
+.form-grupo label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.form-grupo input[type="text"],
+.form-grupo input[type="email"],
+.form-grupo input[type="tel"],
+.form-grupo input[type="url"],
+.form-grupo input[type="date"],
+.form-grupo textarea,
+.form-grupo select {
+  width: 80%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  background: var(--color-blanco);
+  color: var(--color-texto);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font: inherit;
+}
+
+.form-grupo input:focus,
+.form-grupo textarea:focus,
+.form-grupo select:focus {
+  outline: none;
+  border-color: var(--color-principal);
+  box-shadow: 0 0 0 3px rgba(61, 137, 205, 0.15);
+}
+
+.form-grupo .ayuda {
+  display: block;
+  color: var(--color-texto-claro);
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+
+.check-linea {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  user-select: none;
+}
+
+/* Botón primario */
+.btn-primario {
+  background: var(--color-principal);
+  color: var(--color-blanco);
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.btn-primario:hover {
+  background: #357bbc;
+  transform: translateY(-1px);
+  box-shadow: var(--sombra);
+}
+
+.btn-primario:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Tarjeta FAQ: detalles */
+.tarjeta-faq details {
+  border: 1px solid var(--color-borde-claro);
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: var(--color-gris-muy-claro);
+  margin-bottom: 12px;
+  transition: box-shadow 0.2s;
+}
+
+.tarjeta-faq details:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.tarjeta-faq summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Mapa */
+.mapa {
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+/* Lista de enlaces de contacto */
+.lista-contacto {
+  list-style: none;
+  padding-left: 0;
+  margin: 8px 0 0 0;
+  display: grid;
+  gap: 8px;
+}
+
+.lista-contacto a {
+  text-decoration: none;
+  color: var(--color-principal);
+  font-weight: bold;
+}
+
+.lista-contacto a:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo: apilar tarjetas en pantallas pequeñas */
+@media (max-width: 768px) {
+  .tarjetas {
+    flex-direction: column;
+  }
 }

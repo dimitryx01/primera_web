@@ -7,12 +7,13 @@
   --color-secundario: #ffb627;
   --color-fondo: #ffffff;
   --color-texto: #333;
-  --color-blanco: #fff;
+  --color-blanco: #ffffff;
+  --color-fondo: #ffc971;
   --color-gris-claro: #f5f5f5;
   --color-gris-medio: #eee;
   --color-gris-oscuro: #e0e0e0;
   --color-gris-muy-claro: #fafafa;
-  --color-borde:var(--color-principal);
+  --color-borde: var(--color-principal);
   --color-borde-claro: var(--color-principal);
   --color-texto-claro: #666;
   --color-activo: yellow;
@@ -30,18 +31,24 @@ body {
 /* ====== HEADER ====== */
 header {
   width: 100%;
+
+
+  background: var(--color-principal);
+  color: var(--color-blanco);
+}
+
+header .header-w {
   max-width: 1250px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 20px;
-  background: var(--color-principal);
-  color: var(--color-blanco);
 }
 
 header h1 {
   margin: 0;
+  width: 100%;
 }
 
 header nav ul {
@@ -79,8 +86,169 @@ header nav a:hover {
 }
 
 .Hero:hover {
-  transform: scale(1.02); /* Pequeño zoom */
+  transform: scale(1.02);
+  /* Pequeño zoom */
 }
+
+
+
+
+
+
+/* ====== estilos para landing pedido version FLEX ====== */
+.Hero-pedido {
+  width: min(90%, 1200px);
+  height: 300px;
+  margin: 20px auto;
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  transition: transform 0.3s;
+  justify-content: center;
+  /* centra el contenedor interno */
+  padding: 24px 32px;
+  /* simétrico */
+
+}
+
+.Hero-pedido:hover {
+  transform: scale(1.02);
+}
+
+/* Contenedor en flex: dos columnas equilibradas */
+.contenedor-hero {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* texto izq | imagen der */
+
+}
+
+/* Columna de texto crece y ocupa la izquierda */
+.hero-texto {
+
+  margin: 0 60px;
+}
+
+.hero-texto h1 {
+  font-size: 32px;
+  margin: 0 0 8px;
+}
+
+.hero-texto p {
+  font-size: 16px;
+  color: #555;
+  margin: 0 0 16px;
+}
+
+.btn-cta {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Columna imagen anclada a la derecha */
+.hero-imagen {
+  flex: 0 0 auto;
+  /* no crecer, no encoger */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+  /* se pega a la derecha */
+}
+
+.hero-imagen img {
+  width: 550px;
+  height: auto;
+  object-fit: contain;
+
+}
+
+/* Responsive solo con flex: apila en móvil */
+@media (max-width: 768px) {
+  .Hero-pedido {
+    height: auto;
+  }
+
+  .contenedor-hero {
+    flex-direction: column-reverse;
+    /* imagen abajo, texto arriba */
+    text-align: center;
+  }
+
+  .hero-imagen {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .hero-imagen img {
+    width: clamp(220px, 60vw, 420px);
+  }
+
+  .hero-texto h1 {
+    font-size: 26px;
+  }
+}
+
+
+
+.banner-pedido {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px 24px;
+  background: #f9f9f9;
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.banner-pedido:hover {
+  background: var(--color-gris-oscuro);
+}
+
+/* ====== TARJETAS ====== */
+.tarjetas-pedido {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+  margin: 30px auto;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+
+.tarjeta-pedido {
+  flex: 1 1 250px;
+  max-width: 320px;
+  border: 1px solid var(--color-borde);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  background: var(--color-blanco);
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin: 20px 20px 20px 0;
+}
+
+.tarjeta-pedido:hover {
+  transform: translateY(-4px);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+
+
 
 /* ====== BANNER ====== */
 .banner {
@@ -225,7 +393,7 @@ header nav a.activo {
 }
 
 .tarjeta-faq details:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .tarjeta-faq summary {

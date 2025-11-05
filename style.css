@@ -92,143 +92,114 @@ header nav a:hover {
 
 
 
+/* ====== VERSIÓN BOOTSTRAP (Framework CSS) ====== */
 
-/* ====== estilos para landing pedido version GRID ====== */
-.Hero-pedido {
-  width: min(90%, 1200px);
-  height: 300px;
-  margin: 20px auto;
+/* Hero Bootstrap */
+.hero-pedido-bootstrap {
+  margin: 40px auto;
+  padding: 40px 20px;
   border: 1px solid var(--color-borde);
   border-radius: 10px;
-  display: grid;
-  place-items: center;
-  font-size: 24px;
   transition: transform 0.3s;
-  padding: 24px 32px;
+  background: var(--color-blanco);
 }
 
-.Hero-pedido:hover {
+.hero-pedido-bootstrap:hover {
   transform: scale(1.02);
 }
 
-/* Contenedor en grid: dos columnas */
-.contenedor-hero {
-  max-width: 1000px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 60px;
-}
-
-/* Columna de texto */
-.hero-texto {
-  grid-column: 1;
-}
-
-.hero-texto h1 {
+.hero-pedido-bootstrap h1 {
   font-size: 32px;
-  margin: 0 0 8px;
+  margin-bottom: 12px;
+  color: var(--color-texto);
 }
 
-.hero-texto p {
+.hero-pedido-bootstrap p {
   font-size: 16px;
   color: #555;
-  margin: 0 0 16px;
+  margin-bottom: 20px;
 }
 
-.btn-cta {
+.hero-pedido-bootstrap .btn-cta {
   display: inline-block;
   background: #333;
-  color: #fff;
+  color: var(--color-blanco);
   padding: 10px 18px;
   border-radius: 999px;
   text-decoration: none;
   font-size: 16px;
+  transition: background 0.3s;
 }
 
-/* Columna imagen */
-.hero-imagen {
-  grid-column: 2;
-  display: grid;
-  place-items: center;
+.hero-pedido-bootstrap .btn-cta:hover {
+  background: #555;
+  color: var(--color-blanco);
 }
 
-.hero-imagen img {
-  width: 500px;
+.hero-pedido-bootstrap img {
+  max-width: 500px;
+  width: 100%;
   height: auto;
-  object-fit: contain;
 }
 
-/* Responsive con grid */
-@media (max-width: 768px) {
-  .Hero-pedido {
-    height: auto;
-  }
-
-  .contenedor-hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 20px;
-  }
-
-  .hero-texto {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-  .hero-imagen {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .hero-imagen img {
-    width: clamp(220px, 60vw, 420px);
-  }
-
-  .hero-texto h1 {
-    font-size: 26px;
-  }
+/* Banner Bootstrap */
+.banner-pedido-bootstrap {
+  margin: 30px auto;
 }
 
-.banner-pedido {
-  width: 80%;
-  margin: 20px auto;
+.banner-pedido-bootstrap article {
   padding: 20px 24px;
   background: #f9f9f9;
   border: 1px solid var(--color-borde);
   border-radius: 10px;
-  text-align: center;
+  transition: background 0.3s;
 }
 
-.banner-pedido:hover {
+.banner-pedido-bootstrap article:hover {
   background: var(--color-gris-oscuro);
 }
 
-/* ====== TARJETAS CON GRID ====== */
-.tarjetas-pedido {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin: 30px auto;
-  max-width: 1000px;
-  padding: 0 20px;
+/* Tarjetas Bootstrap */
+.tarjetas-pedido-bootstrap {
+  margin: 40px auto;
 }
 
-.tarjeta-pedido {
+.tarjeta-pedido-bootstrap {
   border: 1px solid var(--color-borde);
   padding: 20px;
   border-radius: 8px;
   text-align: center;
   background: var(--color-blanco);
   transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
 }
 
-.tarjeta-pedido:hover {
+.tarjeta-pedido-bootstrap:hover {
   transform: translateY(-4px);
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
 }
 
+.tarjeta-pedido-bootstrap h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: var(--color-texto);
+}
+
+.tarjeta-pedido-bootstrap p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Responsive Bootstrap */
+@media (max-width: 768px) {
+  .hero-pedido-bootstrap img {
+    max-width: clamp(220px, 60vw, 420px);
+  }
+
+  .hero-pedido-bootstrap h1 {
+    font-size: 26px;
+  }
+}
 
 
 

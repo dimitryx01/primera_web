@@ -388,3 +388,196 @@ header nav a.activo {
     flex-direction: column;
   }
 }
+
+
+/* ====== MENÚ HAMBURGUESA (MÓVIL) ====== */
+.hamburger {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1000;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--color-blanco);
+  margin: 5px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Navegación móvil por defecto (oculta) */
+header nav ul {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: var(--color-principal);
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+header nav ul.active {
+  display: flex;
+}
+
+header nav ul li {
+  margin: 8px 0;
+}
+
+
+/* Navegación móvil por defecto (oculta) */
+header nav ul {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: var(--color-principal);
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+header nav ul.active {
+  display: flex;
+}
+
+header nav ul li {
+  margin: 8px 0;
+}
+
+/* Estilos base móvil para hero */
+.hero-pedido-bootstrap {
+  margin: 20px auto;
+  padding: 20px 15px;
+}
+
+.hero-pedido-bootstrap h1 {
+  font-size: 24px;
+}
+
+.hero-pedido-bootstrap p {
+  font-size: 14px;
+}
+
+.hero-pedido-bootstrap img {
+  max-width: 100%;
+}
+
+/* Banner móvil */
+.banner-pedido-bootstrap article {
+  padding: 15px;
+  font-size: 14px;
+}
+
+/* Tarjetas móvil */
+.tarjeta-pedido-bootstrap h3 {
+  font-size: 18px;
+}
+
+.tarjeta-pedido-bootstrap p {
+  font-size: 13px;
+}
+
+/* ====== BREAKPOINT: TABLETAS (481px - 768px) ====== */
+@media (min-width: 481px) {
+ 
+
+  
+
+  .banner-pedido-bootstrap article {
+    padding: 18px;
+    font-size: 15px;
+  }
+
+  /* Tarjetas en tableta */
+  .tarjeta-pedido-bootstrap {
+    padding: 18px;
+  }
+}
+
+/* ====== BREAKPOINT: ESCRITORIO (769px en adelante) ====== */
+@media (min-width: 769px) {
+  /* Ocultar hamburguesa en escritorio */
+  .hamburger {
+    display: none;
+  }
+
+  /* Mostrar menú horizontal en escritorio */
+  header nav ul {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    gap: 20px;
+  }
+
+  header nav ul li {
+    margin: 0;
+  }
+
+  .hero-pedido-bootstrap h1 {
+    font-size: 32px;
+  }
+
+  .hero-pedido-bootstrap p {
+    font-size: 16px;
+  }
+
+  .hero-pedido-bootstrap img {
+    max-width: 500px;
+  }
+
+  /* Banner escritorio */
+  .banner-pedido-bootstrap article {
+    padding: 20px 24px;
+    font-size: 16px;
+  }
+
+  /* Tarjetas escritorio */
+  .tarjeta-pedido-bootstrap {
+    padding: 20px;
+  }
+
+  .tarjeta-pedido-bootstrap h3 {
+    font-size: 20px;
+  }
+
+  .tarjeta-pedido-bootstrap p {
+    font-size: 14px;
+  }
+}
+
+/* ====== BREAKPOINT EXTRA: Pantallas grandes (1200px+) ====== */
+@media (min-width: 1200px) {
+  .hero-pedido-bootstrap {
+    max-width: 1200px;
+  }
+
+  .tarjetas-pedido-bootstrap .container {
+    max-width: 1200px;
+  }
+}

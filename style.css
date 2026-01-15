@@ -615,3 +615,72 @@ header nav ul li {
     max-width: 1200px;
   }
 }
+
+
+
+
+/* ====== PODCAST PLAYER (custom) ====== */
+/* Ajusta estos valores a TU guía de estilo */
+:root{
+  --brand: #ff6a00;        /* <-- tu color principal */
+  --brand-2: #111827;      /* <-- tu color oscuro / texto */
+  --surface: #ffffff;      /* fondo tarjetas */
+  --border: rgba(17,24,39,.12);
+}
+
+.audio-player .ap-ui{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.audio-player .ap-btn{
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--brand);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit; /* respeta tu tipografía */
+}
+
+.audio-player .ap-btn:focus-visible{
+  outline: 3px solid color-mix(in srgb, var(--brand) 60%, white);
+  outline-offset: 2px;
+}
+
+.audio-player .ap-times{
+  min-width: 110px;
+  font-variant-numeric: tabular-nums;
+  color: var(--brand-2);
+  opacity: 0.9;
+}
+
+.audio-player input[type="range"]{
+  accent-color: var(--brand); /* clave para “usar tus colores” */
+}
+
+.audio-player .ap-range-wrap{
+  flex: 1;
+}
+
+.audio-player .ap-seek{
+  width: 100%;
+}
+
+.audio-player .ap-vol-wrap{
+  width: 110px;
+}
+
+@media (max-width: 576px){
+  .audio-player .ap-vol-wrap{
+    display: none; /* en móvil simplificamos */
+  }
+}

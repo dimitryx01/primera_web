@@ -53,27 +53,85 @@ header .header-w {
   padding: 15px 20px;
 }
 
-/* MODIFICACIÓN PARA EJERCICIO 6.2 */
+
+/* ====== LOGO ANIMADO ====== */
 .logo {
-    /* Establece un tamaño base para el logo */
     width: 150px;
     height: 50px;
-    /* Quitar el h1 para usar la imagen de fondo */
-    text-indent: -9999px; 
-    overflow: hidden; /* Oculta el texto del h1 si no se quita del HTML */
-    
-    /* Propiedades de background para el ejercicio */
-    background-image: url('img/logo.png'); /* Asume que tienes una imagen de logo */
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    overflow: visible; /* Permitir que las animaciones se vean fuera del contenedor */
+}
+
+.logo-part {
     background-repeat: no-repeat;
     background-position: center;
+    background-size: contain;
+}
 
-    /* EJERCICIO 6.2: Se elige 'cover' porque queremos que la imagen cubra todo el
-       espacio del contenedor del logo, manteniendo su proporción, sin importar si
-       parte de la imagen se recorta. Esto asegura que el logo siempre sea visible
-       y ocupe el area asignada.
-      
-    */
-    background-size: cover; 
+/* Cuadrado (logo-1.png) */
+.logo-cuadrado {
+    width: 50px;
+    height: 50px;
+    background-image: url('img/logo-1.png');
+    animation: entradaCuadrado 2.2s ease-out forwards;
+    opacity: 0;
+}
+
+/* Rectángulo (logo-2.png) */
+.logo-rectangulo {
+    width: 100px;
+    height: 50px;
+    background-image: url('img/logo-2.png');
+    animation: entradaRectangulo 0.8s ease-out 1.2s forwards;
+    opacity: 0;
+}
+
+/* ====== ANIMACIÓN DEL CUADRADO (rueda de derecha a izquierda) ====== */
+@keyframes entradaCuadrado {
+    0% {
+        transform: translateX(200px) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(100px) rotate(360deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0) rotate(720deg);
+        opacity: 1;
+    }
+}
+
+/* ====== ANIMACIÓN DEL RECTÁNGULO (caída suave de arriba a abajo) ====== */
+@keyframes entradaRectangulo {
+    0% {
+        transform: translateY(-80px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-40px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ====== ANIMACIÓN SUTIL CONTINUA (opcional, después de la entrada) ====== */
+.logo:hover .logo-cuadrado  .logo-rectangulo {
+    animation: pulsoCuadrado 2s ease-in-out infinite;
+}
+
+@keyframes pulsoCuadrado {
+    0%, 100% {
+        transform: scale(1) rotate(720deg);
+    }
+    50% {
+        transform: scale(1.05) rotate(720deg);
+    }
 }
 
 /*

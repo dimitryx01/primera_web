@@ -53,7 +53,6 @@ header .header-w {
   padding: 15px 20px;
 }
 
-
 /* ====== LOGO ANIMADO ====== */
 .logo {
     width: 150px;
@@ -61,7 +60,15 @@ header .header-w {
     position: relative;
     display: flex;
     align-items: flex-start;
-    overflow: visible; /* Permitir que las animaciones se vean fuera del contenedor */
+    overflow: visible;
+    cursor: pointer;
+    /* Transición para que el inicio/fin del tambaleo sea suave */
+    transition: transform 0.3s ease;
+}
+
+/* Cuando pasas el ratón, el contenedor completo tambalea */
+.logo:hover {
+    animation: tambaleoSuave 0.6s ease-in-out infinite;
 }
 
 .logo-part {
@@ -88,51 +95,33 @@ header .header-w {
     opacity: 0;
 }
 
-/* ====== ANIMACIÓN DEL CUADRADO (rueda de derecha a izquierda) ====== */
+/* ====== ANIMACIONES DE ENTRADA ====== */
 @keyframes entradaCuadrado {
-    0% {
-        transform: translateX(200px) rotate(0deg);
-        opacity: 0;
-    }
-    50% {
-        transform: translateX(100px) rotate(360deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(0) rotate(720deg);
-        opacity: 1;
-    }
+    0% { transform: translateX(200px) rotate(0deg); opacity: 0; }
+    50% { transform: translateX(100px) rotate(360deg); opacity: 1; }
+    100% { transform: translateX(0) rotate(720deg); opacity: 1; }
 }
 
-/* ====== ANIMACIÓN DEL RECTÁNGULO (caída suave de arriba a abajo) ====== */
 @keyframes entradaRectangulo {
-    0% {
-        transform: translateY(-80px);
-        opacity: 0;
-    }
-    50% {
-        transform: translateY(-40px);
-        opacity: 0.5;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    0% { transform: translateY(-80px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
 }
 
-/* ====== ANIMACIÓN SUTIL CONTINUA (opcional, después de la entrada) ====== */
-.logo:hover .logo-cuadrado  .logo-rectangulo {
-    animation: pulsoCuadrado 2s ease-in-out infinite;
-}
-
-@keyframes pulsoCuadrado {
+/* ====== NUEVA ANIMACIÓN DE TAMBALEO SUAVE ====== */
+/* Se aplica al contenedor padre para no romper las piezas hijas */
+@keyframes tambaleoSuave {
     0%, 100% {
-        transform: scale(1) rotate(720deg);
+        transform: rotate(0deg) scale(1.05);
     }
-    50% {
-        transform: scale(1.05) rotate(720deg);
+    25% {
+        transform: rotate(2deg) scale(1.05);
+    }
+    75% {
+        transform: rotate(-2deg) scale(1.05);
     }
 }
+
+
 
 /*
 ESTO LO OMITO POR QUE YA EL LOGO SERA LA IMAGEN

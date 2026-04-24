@@ -22,9 +22,9 @@
                     <span></span>
                 </button>
                 <ul id="nav-menu">
-                    <li><a href="index.html" >Inicio</a></li>
-                    <li><a href="podcast.html" >Podcasts</a></li>
-                    <li><a href="video.html" >Video</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="podcast.html">Podcasts</a></li>
+                    <li><a href="video.html">Video</a></li>
                     <li><a href="contact.html" class="activo">Contacto</a></li>
                 </ul>
             </nav>
@@ -32,7 +32,6 @@
     </header>
 
     <main id="contacto">
-
 
         <div class="banner">
             <article>
@@ -44,39 +43,47 @@
         <section class="tarjetas tarjetas-contacto">
             <div class="tarjeta tarjeta-form">
                 <h3>Envíanos un mensaje</h3>
-                <form action="#" method="post" novalidate>
+
+                <!-- FORMULARIO PRÁCTICA 12 -->
+                <form id="form-inscripcion" action="procesar.php" method="post">
+                    <fieldset class="datos-personales">
+                        <legend>Datos Personales</legend>
+
+                        <div class="form-grupo">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Escribe tu nombre" />
+                        </div>
+
+                        <div class="form-grupo">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="tu@email.com" />
+                        </div>
+
+                        <div class="form-grupo">
+                            <label for="password">Contraseña</label>
+                            <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" />
+                        </div>
+                    </fieldset>
+
                     <div class="form-grupo">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" />
-                        <small class="ayuda">Obligatorio</small>
+                        <label for="lenguaje">Lenguaje favorito</label>
+                        <select id="lenguaje" name="lenguaje">
+                            <option value="html">HTML</option>
+                            <option value="js">JS</option>
+                            <option value="python">Python</option>
+                        </select>
                     </div>
 
                     <div class="form-grupo">
-                        <label for="email">Correo electrónico</label>
-                        <input type="email" id="email" name="email" required placeholder="tu@correo.com" />
-                        <small class="ayuda">Usaremos este correo para responderte</small>
-                    </div>
-
-                    <div class="form-grupo">
-                        <label for="asunto">Asunto</label>
-                        <input type="text" id="asunto" name="asunto" placeholder="Motivo del mensaje" />
-                    </div>
-
-                    <div class="form-grupo">
-                        <label for="mensaje">Mensaje</label>
-                        <textarea id="mensaje" name="mensaje" rows="6" required
-                            placeholder="Cuéntanos en qué podemos ayudarte"></textarea>
-                    </div>
-
-                    <div class="form-grupo">
-                        <label class="check-linea">
-                            <input type="checkbox" id="acepta" name="acepta" required />
-                            Acepto la política de privacidad
-                        </label>
+                        <label for="motivacion">Motivación</label>
+                        <textarea id="motivacion" name="motivacion" rows="4" maxlength="200"
+                            placeholder="¿Por qué quieres aprender?"></textarea>
                     </div>
 
                     <button type="submit" class="btn-primario">Enviar</button>
                 </form>
+                <!-- FIN FORMULARIO PRÁCTICA 12 -->
+
             </div>
 
             <div class="tarjeta tarjeta-info">
@@ -132,11 +139,10 @@
             <small>&copy; 2025 · Ilerna</small>
         </div>
     </footer>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Script del menú hamburguesa -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="menu.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

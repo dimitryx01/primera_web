@@ -815,3 +815,34 @@ header nav ul li {
     height: 70vh; /* Ajusta según tu diseño */
   }
 }
+
+
+
+
+/* ========================================
+   ESTILOS PRÁCTICA 12 - Formularios I
+   ======================================== */
+
+/* Fieldset de datos personales */
+.datos-personales {
+    background: azure;
+    border: 2px solid var(--color-principal);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.datos-personales legend {
+    font-weight: bold;
+    padding: 0 10px;
+    color: var(--color-texto);
+}
+
+/* Ajustar ancho de inputs al 60% para la práctica */
+#form-inscripcion .form-grupo input[type="text"],
+#form-inscripcion .form-grupo input[type="email"],
+#form-inscripcion .form-grupo input[type="password"],
+#form-inscripcion .form-grupo select,
+#form-inscripcion .form-grupo textarea {
+    width: 60%;
+}

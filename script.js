@@ -76,3 +76,21 @@ window.onload = function () {
   configurarSelectorIdiomas();
   loadPreference();
 };
+
+// Práctica 12: Validación del formulario
+document.addEventListener('DOMContentLoaded', function () {
+    var formulario = document.getElementById('form-inscripcion');
+
+    formulario.addEventListener('submit', function (event) {
+        var password = document.getElementById('password').value;
+        var nombre = document.getElementById('nombre').value;
+
+        if (password.length < 8) {
+            alert('Error: La contraseña debe tener al menos 8 caracteres.');
+            event.preventDefault();
+            return;
+        }
+
+        console.log('Bienvenido, ' + nombre + '. Tu inscripción está lista.');
+    });
+});

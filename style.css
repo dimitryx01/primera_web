@@ -846,3 +846,22 @@ header nav ul li {
 #form-inscripcion .form-grupo textarea {
     width: 60%;
 }
+
+/* Práctica 13: pseudoclases :valid e :invalid */
+#form-inscripcion .form-grupo input:valid,
+#form-inscripcion .form-grupo textarea:valid {
+    border-color: #28a745;
+}
+
+#form-inscripcion .form-grupo input:invalid,
+#form-inscripcion .form-grupo textarea:invalid {
+    border-color: #dc3545;
+}
+
+/* Contador de caracteres */
+#contador {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-texto-claro);
+    margin-top: 4px;
+}

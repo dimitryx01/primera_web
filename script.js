@@ -77,16 +77,45 @@ window.onload = function () {
   loadPreference();
 };
 
-// Práctica 12: Validación del formulario
+// Práctica 12 y 13: Validación del formulario
 document.addEventListener('DOMContentLoaded', function () {
     var formulario = document.getElementById('form-inscripcion');
+    if (!formulario) return;
 
+    // Práctica 13 — contador de caracteres del textarea
+    var textarea = document.getElementById('motivacion');
+    var contador = document.getElementById('contador');
+
+    textarea.addEventListener('input', function () {
+        var restantes = textarea.maxLength - textarea.value.length;
+        contador.textContent = textarea.value.length + ' / ' + textarea.maxLength;
+        contador.style.color = restantes < 20 ? '#dc3545' : '';
+    });
+
+    // Validación al enviar
     formulario.addEventListener('submit', function (event) {
-        var password = document.getElementById('password').value;
         var nombre = document.getElementById('nombre').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
 
+        // Práctica 12: contraseña mínimo 8 caracteres
         if (password.length < 8) {
             alert('Error: La contraseña debe tener al menos 8 caracteres.');
+            event.preventDefault();
+            return;
+        }
+
+        // Práctica 13: email con regex propio
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Error: El formato del email no es válido.');
+            event.preventDefault();
+            return;
+        }
+
+        // Práctica 13: nombre debe empezar por mayúscula y solo letras/espacios
+        if (!/^[A-ZÁÉÍÓÚÜÑ][a-zA-ZáéíóúÁÉÍÓÚüÜñÑ ]*$/.test(nombre)) {
+            alert('Error: El nombre debe empezar por mayúscula y contener solo letras y espacios.');
             event.preventDefault();
             return;
         }
